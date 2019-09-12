@@ -4,8 +4,8 @@ import NewDishForm from './components/NewDishForm'
 import './App.css'
 
 //Redux-y things!
-import store from './redux/store/index'
-import { addMenu } from './redux/actions/index'
+import store from './redux/store/store'
+import { addMenu } from './redux/actions/menuActions'
 
 window.store = store
 window.addMenu = addMenu
