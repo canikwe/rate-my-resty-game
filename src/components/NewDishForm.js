@@ -1,27 +1,68 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { addMenu } from '../redux/actions/menuActions'
 
-const NewDishForm = props => {
-  console.log(props)
-  const submitMenu = e => {
-    e.preventDefault()
-    const dummyMenu = { name: `I'm a new menu`, id: Math.floor(Math.random() * 10000)}
-    props.addMenu(dummyMenu)
+class NewDishForm extends Component {
+  constructor() {
+    super()
+    this.state = {
+      name: '',
+      image: '',
+      desc: ''
+    }
   }
 
-  return(
-    <div>
-      <h3>I am a form for a new menu item</h3>
-      <form onSubmit={ submitMenu }>
-        <label htmlFor='name'>Name:</label>
-        <input type='text'name='name'/>
-        <label htmlFor='id'>id:</label>
-        <input type='number' name='id' />
-        <input type='submit' value='Create New Menu!' />
-      </form>
-    </div>
-  )
+  submitMenu = e => {
+    e.preventDefault()
+    const dummyMenu = { 
+      id: Math.floor(Math.random() * 10000),
+      name: this.state.name,
+      image: this.state.image,
+      desc: this.state.desc
+    }
+    this.props.addMenu(dummyMenu)
+    this.setState({ name: '', image: '', desc: '' })
+  }
+
+  handleForm = e => {
+    this.setState({
+      [e.target.name]: e.target.value
+    })
+  }
+
+  render() {
+    return(
+      <div>
+        <h3>I am a form for a new menu item</h3>
+        <form onSubmit={ this.submitMenu }>
+          <label htmlFor='name'>Name:</label>
+          <input
+            type='text'
+            name='name'
+            value={this.state.name}
+            onChange={this.handleForm}
+          />
+          <label htmlFor='image'>image:</label>
+          <input
+            type='text'
+            name='image'
+            value={this.state.image}
+            onChange={this.handleForm}
+          />
+          <label htmlFor='desc'>Description:</label>
+          <input
+            type='text'
+            name='desc'
+            value={this.state.desc}
+            onChange={this.handleForm}
+          />
+          <input type='submit' value='Create New Menu!' />
+        </form>
+      </div>
+    )
+
+  }
+
 }
 
 const mapDispatchToProps = dispatch => {
