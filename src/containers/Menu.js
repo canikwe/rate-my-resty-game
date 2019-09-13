@@ -3,7 +3,6 @@ import Dish from '../components/Dish'
 import { connect } from 'react-redux'
 
 const Menu = props => {
-  console.log(props)
   return(
     <Fragment>
       <h1>Menu</h1>

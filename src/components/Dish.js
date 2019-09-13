@@ -1,7 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { removeMenu } from '../redux/actions/menuActions'
-import '../../node_modules/uikit/dist/css/uikit-core.css'
 
 const Dish = props => {
   const { dishDeets: { id, name }, removeMenu } = props
