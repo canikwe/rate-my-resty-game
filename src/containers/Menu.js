@@ -7,7 +7,9 @@ const Menu = props => {
   return(
     <Fragment>
       <h1>Menu</h1>
-      { props.menu.map(item => <Dish key={item.id} dishDeets={item} />) }
+      <div className='uk-grid-small' data-uk-grid>
+        { props.menu.map(item => <Dish key={item.id} dishDeets={item} />) }
+      </div>
     </Fragment>
   )
 }
