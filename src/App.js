@@ -2,6 +2,7 @@ import React, { Fragment } from 'react'
 import Menu from './containers/Menu'
 import NewDishForm from './components/NewDishForm'
 import Nav from './components/Nav'
+import Header from './components/Header'
 import NotFound from './components/NotFound'
 import { Route, Switch } from 'react-router-dom'
 import './App.css'
@@ -12,6 +13,7 @@ import '../node_modules/uikit/dist/js/uikit-core.js'
 import store from './redux/store/store'
 import { addMenu } from './redux/actions/menuActions'
 
+
 window.store = store
 window.addMenu = addMenu
 
@@ -20,6 +22,7 @@ const App = () => {
   return (
     <Fragment>
       <Nav />
+      <Header />
       <Switch>
         <Route path='/new' component={ NewDishForm } />
         <Route exact path='/' component={ Menu } />

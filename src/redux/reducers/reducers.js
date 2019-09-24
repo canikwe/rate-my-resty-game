@@ -1,5 +1,6 @@
 import { ADD_MENU, REMOVE_MENU } from '../actions/types'
 import { combineReducers } from 'redux';
+// import { menus } from '../../FakeDB'
 
 const menuReducer = (state = [], action) => {
   //create a copy of the original state to manipulate and return later
