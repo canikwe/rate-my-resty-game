@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header Renders on the Header directly to the page 1`] = `
+<h1>
+  Welcome to Rate My Resty!
+</h1>
+`;
