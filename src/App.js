@@ -21,7 +21,7 @@ window.addMenu = addMenu
 const App = () => {
   return (
     <Fragment>
-      <Nav />
+      <Nav color='yellow'/>
       <Header />
       <Switch>
         <Route path='/new' component={ NewDishForm } />

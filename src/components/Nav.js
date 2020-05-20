@@ -1,9 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const Nav = () => {
+const Nav = (props) => {
   return(
-    <div>
+    <div style={{backgroundColor: props.color}}>
       <Link to='/new'>Make a New Menu</Link> | 
       <Link to='/'>Show All Menus</Link>
     </div>
